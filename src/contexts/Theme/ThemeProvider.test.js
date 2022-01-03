@@ -19,24 +19,23 @@ const TestComponent = () => {
   );
 };
 
+const renderTestComponent = () =>
+  render(
+    <ThemeProvider>
+      <TestComponent />
+    </ThemeProvider>
+  );
+
 describe("ThemeProvider", () => {
   it("sets light theme as default", () => {
-    render(
-      <ThemeProvider>
-        <TestComponent />
-      </ThemeProvider>
-    );
+    renderTestComponent();
 
     // classname of <button> should be "light"
     expect(screen.getByTestId("test-button").className).toEqual("light");
   });
 
   it("changes theme", () => {
-    render(
-      <ThemeProvider>
-        <TestComponent />
-      </ThemeProvider>
-    );
+    renderTestComponent();
 
     // Clicking on button will change theme to dark
     fireEvent.click(screen.getByTestId("test-button"));
