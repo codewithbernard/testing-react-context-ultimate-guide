@@ -1,5 +1,12 @@
+import { ThemeProvider } from "./contexts/Theme";
+import Button from "./components/Button";
+
 const App = () => {
-  return <div>Hello World</div>;
+  return (
+    <ThemeProvider>
+      <Button>Click me!</Button>
+    </ThemeProvider>
+  );
 };
 
 export default App;

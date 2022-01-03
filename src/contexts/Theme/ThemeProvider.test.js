@@ -19,6 +19,9 @@ const TestComponent = () => {
   );
 };
 
+/**
+ * Helper function to render ThemeProvider
+ */
 const renderTestComponent = () =>
   render(
     <ThemeProvider>
